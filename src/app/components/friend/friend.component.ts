@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Friend } from '../../types/friend.type';
+import { Friend } from '../../models/friend.model';
 
 @Component({
   selector: 'app-friend',
