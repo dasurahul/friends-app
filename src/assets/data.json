@@ -1,0 +1,129 @@
+{
+  "characters": [
+    {
+      "name": "Ross Geller",
+      "occupation": "Paleontologist",
+      "age": 32,
+      "relationship_status": "Divorced",
+      "friends": [
+        "Rachel Green",
+        "Monica Geller",
+        "Chandler Bing",
+        "Joey Tribbiani",
+        "Phoebe Buffay"
+      ],
+      "image": "../assets/images/ross.jpeg"
+    },
+    {
+      "name": "Rachel Green",
+      "occupation": "Fashion Executive",
+      "age": 30,
+      "relationship_status": "In a relationship",
+      "friends": [
+        "Monica Geller",
+        "Chandler Bing",
+        "Joey Tribbiani",
+        "Phoebe Buffay"
+      ],
+      "image": "../assets/images/rachel.jpg"
+    },
+    {
+      "name": "Monica Geller",
+      "occupation": "Chef",
+      "age": 28,
+      "relationship_status": "Married",
+      "friends": [
+        "Rachel Green",
+        "Ross Geller",
+        "Chandler Bing",
+        "Joey Tribbiani",
+        "Phoebe Buffay"
+      ],
+      "image": "../assets/images/monica.jpg"
+    },
+    {
+      "name": "Chandler Bing",
+      "occupation": "Advertising Executive",
+      "age": 31,
+      "relationship_status": "Married",
+      "friends": [
+        "Rachel Green",
+        "Monica Geller",
+        "Ross Geller",
+        "Joey Tribbiani",
+        "Phoebe Buffay"
+      ],
+      "image": "../assets/images/chandler.jpg"
+    },
+    {
+      "name": "Joey Tribbiani",
+      "occupation": "Actor",
+      "age": 28,
+      "relationship_status": "Single",
+      "friends": [
+        "Rachel Green",
+        "Monica Geller",
+        "Chandler Bing",
+        "Ross Geller",
+        "Phoebe Buffay"
+      ],
+      "image": "../assets/images/joey.jpg"
+    },
+    {
+      "name": "Phoebe Buffay",
+      "occupation": "Massage Therapist",
+      "age": 33,
+      "relationship_status": "Married",
+      "friends": [
+        "Rachel Green",
+        "Monica Geller",
+        "Chandler Bing",
+        "Ross Geller",
+        "Joey Tribbiani"
+      ],
+      "image": "../assets/images/phoebe.jpg"
+    }
+  ],
+  "extras": [
+    {
+      "name": "Janice Hosenstein",
+      "occupation": "Unknown",
+      "age": 35,
+      "relationship_status": "Divorced",
+      "friends": ["Chandler Bing"],
+      "image": "../assets/images/janice.jpg"
+    },
+    {
+      "name": "Gunther",
+      "occupation": "Barista",
+      "age": 28,
+      "relationship_status": "Single",
+      "friends": ["Rachel Green"],
+      "image": "../assets/images/gunther.jpg"
+    },
+    {
+      "name": "Mike Hannigan",
+      "occupation": "Unknown",
+      "age": 35,
+      "relationship_status": "Married",
+      "friends": ["Phoebe Buffay"],
+      "image": "../assets/images/mike.jpg"
+    },
+    {
+      "name": "Estelle Leonard",
+      "occupation": "Agent",
+      "age": 52,
+      "relationship_status": "Single",
+      "friends": ["Joey Tribbiani"],
+      "image": "../assets/images/estelle.jpg"
+    },
+    {
+      "name": "Mr. Heckles",
+      "occupation": "Unknown",
+      "age": 65,
+      "relationship_status": "Single",
+      "friends": [],
+      "image": "../assets/images/heckles.jpg"
+    }
+  ]
+}
