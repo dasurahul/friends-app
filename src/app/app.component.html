@@ -1,16 +1,16 @@
-<div class="max-w-2xl mx-auto">
+<div class="max-w-2xl mx-auto px-2">
   <app-header></app-header>
   <main>
     <input
       type="text"
       placeholder="Search a character..."
-      class="w-[100%] p-4 mb-4 shadow-md"
+      class="w-full p-4 mb-4 shadow-md"
       (input)="onChange($event)"
     />
     <div class="friends-container">
       <div
         *ngFor="let character of filteredCharacters"
-        class="shadow-md rounded-md overflow-hidden"
+        class="bg-white shadow-md rounded-md overflow-hidden"
       >
         <app-friend [friend]="character"></app-friend>
       </div>

@@ -1,7 +1,7 @@
 <img
   src="{{ friend?.image }}"
   alt="{{ friend?.name }}"
-  class="w-[100%] h-[250px] object-cover"
+  class="w-full h-[250px] object-cover"
 />
 <div class="p-2">
   <h3 class="uppercase tracking-wide">{{ friend?.name }}</h3>
@@ -24,7 +24,10 @@
     >
       {{ name }}
     </div>
-    <div class="text-sm p-1" *ngIf="friend?.friends?.length === 0">
+    <div
+      class="text-gray-800 text-sm p-1"
+      *ngIf="friend?.friends?.length === 0"
+    >
       No friend :(
     </div>
   </div>
