@@ -124,6 +124,46 @@
       "relationship_status": "Single",
       "friends": [],
       "image": "../assets/images/heckles.jpg"
+    },
+    {
+      "name": "Emily Waltham",
+      "occupation": "Unknown",
+      "age": 28,
+      "relationship_status": "Married",
+      "friends": [],
+      "image": "../assets/images/emily.jpg"
+    },
+    {
+      "name": "Richard Burke",
+      "occupation": "Ophthalmologist",
+      "age": 45,
+      "relationship_status": "Divorced",
+      "friends": [],
+      "image": "../assets/images/richard.jpg"
+    },
+    {
+      "name": "Judy Geller",
+      "occupation": "Unknown",
+      "age": 58,
+      "relationship_status": "Married",
+      "friends": [],
+      "image": "../assets/images/judy.jpg"
+    },
+    {
+      "name": "Ursula Buffay",
+      "occupation": "Waitress",
+      "age": 33,
+      "relationship_status": "Single",
+      "friends": [],
+      "image": "../assets/images/ursula.jpg"
+    },
+    {
+      "name": "Carol Willick",
+      "occupation": "Unknown",
+      "age": 33,
+      "relationship_status": "Married",
+      "friends": [],
+      "image": "../assets/images/carol.jpg"
     }
   ]
 }
