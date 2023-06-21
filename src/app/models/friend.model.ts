@@ -5,4 +5,5 @@ export type Friend = {
   relationship_status: string;
   friends: string[];
   image: string;
+  gender: string;
 };

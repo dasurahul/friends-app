@@ -1,0 +1,11 @@
+<div class="friends-container">
+  <div
+    *ngFor="let friend of friends"
+    class="bg-white shadow-md rounded-md overflow-hidden"
+  >
+    <app-friend [friend]="friend"></app-friend>
+  </div>
+  <div *ngIf="friends?.length === 0" class="text-lg text-center my-16">
+    No friends found :(
+  </div>
+</div>

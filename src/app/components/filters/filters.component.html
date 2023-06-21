@@ -1,0 +1,90 @@
+<div class="flex justify-between gap-2 mb-4">
+  <input
+    type="text"
+    class="w-full p-4 rounded-md shadow-md"
+    placeholder="Filter by name"
+    (input)="onChange($event)"
+    value="{{ name }}"
+  />
+  <button
+    class="bg-slate-800 min-w-[100px] px-2 rounded-md shadow-md flex justify-center items-center"
+    (click)="openModal()"
+  >
+    <img
+      src="../../../assets/images/filter.svg"
+      alt="more"
+      class="w-6 invert"
+    />
+  </button>
+</div>
+
+<!-- Filter Modal -->
+<app-modal *ngIf="showModal">
+  <h2 class="text-2xl mb-8">Filter</h2>
+
+  <div class="mb-4">
+    <input
+      type="text"
+      class="w-full p-4 rounded-md border border-slate-800"
+      placeholder="Filter by name"
+      name="filterName"
+      (input)="filterChanges($event)"
+      value="{{ filterFields.filterName }}"
+    />
+  </div>
+
+  <div class="mb-4">
+    <label class="block text-slate-600">Sort Name</label>
+    <select
+      class="w-full p-4 border-slate-800 rounded-md"
+      name="nameSortType"
+      (input)="filterChanges($event)"
+      value="{{ filterFields.nameSortType }}"
+    >
+      <option value="ascending" selected>Ascending</option>
+      <option value="descending">Descending</option>
+    </select>
+  </div>
+
+  <div class="mb-4">
+    <span class="block text-slate-600">Gender</span>
+    <div class="mt-2">
+      <label class="inline-flex items-center mr-4">
+        <input
+          type="radio"
+          name="gender"
+          value="male"
+          name="gender"
+          [checked]="filterFields.gender === 'male'"
+        />
+        <span class="ml-2">Male</span>
+      </label>
+      <label class="inline-flex items-center">
+        <input
+          type="radio"
+          name="gender"
+          value="female"
+          name="gender"
+          (input)="filterChanges($event)"
+          [checked]="filterFields.gender === 'female'"
+        />
+        <span class="ml-2">Female</span>
+      </label>
+    </div>
+  </div>
+
+  <div class="flex justify-end gap-4">
+    <button
+      class="min-w-[100px] bg-slate-800 text-white px-4 py-2 rounded"
+      (click)="filter()"
+    >
+      Filter
+    </button>
+    <button
+      class="min-w-[100px] border border-slate-800 px-4 py-2 rounded"
+      (click)="closeModal()"
+    >
+      Cancel
+    </button>
+  </div>
+</app-modal>

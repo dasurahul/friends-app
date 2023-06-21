@@ -12,7 +12,8 @@
         "Joey Tribbiani",
         "Phoebe Buffay"
       ],
-      "image": "../assets/images/ross.jpeg"
+      "image": "../assets/images/ross.jpeg",
+      "gender": "Male"
     },
     {
       "name": "Rachel Green",
@@ -25,7 +26,8 @@
         "Joey Tribbiani",
         "Phoebe Buffay"
       ],
-      "image": "../assets/images/rachel.jpg"
+      "image": "../assets/images/rachel.jpg",
+      "gender": "Female"
     },
     {
       "name": "Monica Geller",
@@ -39,7 +41,8 @@
         "Joey Tribbiani",
         "Phoebe Buffay"
       ],
-      "image": "../assets/images/monica.jpg"
+      "image": "../assets/images/monica.jpg",
+      "gender": "Female"
     },
     {
       "name": "Chandler Bing",
@@ -53,7 +56,8 @@
         "Joey Tribbiani",
         "Phoebe Buffay"
       ],
-      "image": "../assets/images/chandler.jpg"
+      "image": "../assets/images/chandler.jpg",
+      "gender": "Male"
     },
     {
       "name": "Joey Tribbiani",
@@ -67,7 +71,8 @@
         "Ross Geller",
         "Phoebe Buffay"
       ],
-      "image": "../assets/images/joey.jpg"
+      "image": "../assets/images/joey.jpg",
+      "gender": "Male"
     },
     {
       "name": "Phoebe Buffay",
@@ -81,7 +86,8 @@
         "Ross Geller",
         "Joey Tribbiani"
       ],
-      "image": "../assets/images/phoebe.jpg"
+      "image": "../assets/images/phoebe.jpg",
+      "gender": "Female"
     }
   ],
   "extras": [
@@ -91,7 +97,8 @@
       "age": 35,
       "relationship_status": "Divorced",
       "friends": ["Chandler Bing"],
-      "image": "../assets/images/janice.jpg"
+      "image": "../assets/images/janice.jpg",
+      "gender": "Female"
     },
     {
       "name": "Gunther",
@@ -99,7 +106,8 @@
       "age": 28,
       "relationship_status": "Single",
       "friends": ["Rachel Green"],
-      "image": "../assets/images/gunther.jpg"
+      "image": "../assets/images/gunther.jpg",
+      "gender": "Male"
     },
     {
       "name": "Mike Hannigan",
@@ -107,7 +115,8 @@
       "age": 35,
       "relationship_status": "Married",
       "friends": ["Phoebe Buffay"],
-      "image": "../assets/images/mike.jpg"
+      "image": "../assets/images/mike.jpg",
+      "gender": "Male"
     },
     {
       "name": "Estelle Leonard",
@@ -115,7 +124,8 @@
       "age": 52,
       "relationship_status": "Single",
       "friends": ["Joey Tribbiani"],
-      "image": "../assets/images/estelle.jpg"
+      "image": "../assets/images/estelle.jpg",
+      "gender": "Female"
     },
     {
       "name": "Mr. Heckles",
@@ -123,7 +133,8 @@
       "age": 65,
       "relationship_status": "Single",
       "friends": [],
-      "image": "../assets/images/heckles.jpg"
+      "image": "../assets/images/heckles.jpg",
+      "gender": "Male"
     },
     {
       "name": "Emily Waltham",
@@ -131,7 +142,8 @@
       "age": 28,
       "relationship_status": "Married",
       "friends": [],
-      "image": "../assets/images/emily.jpg"
+      "image": "../assets/images/emily.jpg",
+      "gender": "Female"
     },
     {
       "name": "Richard Burke",
@@ -139,7 +151,8 @@
       "age": 45,
       "relationship_status": "Divorced",
       "friends": [],
-      "image": "../assets/images/richard.jpg"
+      "image": "../assets/images/richard.jpg",
+      "gender": "Male"
     },
     {
       "name": "Judy Geller",
@@ -147,7 +160,8 @@
       "age": 58,
       "relationship_status": "Married",
       "friends": [],
-      "image": "../assets/images/judy.jpg"
+      "image": "../assets/images/judy.jpg",
+      "gender": "Female"
     },
     {
       "name": "Ursula Buffay",
@@ -155,7 +169,8 @@
       "age": 33,
       "relationship_status": "Single",
       "friends": [],
-      "image": "../assets/images/ursula.jpg"
+      "image": "../assets/images/ursula.jpg",
+      "gender": "Female"
     },
     {
       "name": "Carol Willick",
@@ -163,7 +178,8 @@
       "age": 33,
       "relationship_status": "Married",
       "friends": [],
-      "image": "../assets/images/carol.jpg"
+      "image": "../assets/images/carol.jpg",
+      "gender": "Female"
     }
   ]
 }

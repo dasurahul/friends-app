@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import * as data from '../assets/data.json';
+import { Friend } from './models/friend.model';
+import { sortArrayOfObjects } from './shared/utils/arrayUtils';
 
 @Component({
   selector: 'app-root',
@@ -7,24 +9,40 @@ import * as data from '../assets/data.json';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'friends-app';
-  friendsData = data;
-  friends = this.friendsData.characters;
-  extras = this.friendsData.extras;
-  allCharacters = [...this.friends, ...this.extras];
-  filteredCharacters = this.allCharacters;
-  input = '';
+  title: string = 'friends-app';
+  friendsData: { characters: Friend[]; extras: Friend[] } = data;
+  friends: Friend[] = this.friendsData.characters;
+  extras: Friend[] = this.friendsData.extras;
+  allCharacters: Friend[] = [...this.friends, ...this.extras];
+  filteredCharacters: Friend[] = this.allCharacters;
 
   /**
-   * Handles the change event of an input element.
-   * @param {Event} e - The input event.
+   * Filters the characters based on the value received from the input field
+   * @param {string} name - The value received from input field.
+   * @returns {void}
    */
-  onChange = (e: Event) => {
-    const input = e.target as HTMLInputElement;
-
-    this.input = input.value;
+  onNameChange = (name: string): void => {
     this.filteredCharacters = this.allCharacters.filter((character) =>
-      character.name.toLowerCase().includes(input.value.toLowerCase())
+      character.name.toLowerCase().includes(name.toLowerCase())
     );
+  };
+
+  /**
+   * Filters the characters based on the filter fields object
+   * @param {{filterName: string, nameSortType: string, gender: string}} data - The object containing filter fields
+   * @returns {void}
+   */
+  onFilterData = (data: {
+    filterName: string;
+    nameSortType: string;
+    gender: string;
+  }): void => {
+    this.filteredCharacters = this.allCharacters.filter((character) => {
+      return (
+        character.name.toLowerCase().includes(data.filterName) &&
+        character.gender.toLowerCase() === data.gender
+      );
+    });
+    sortArrayOfObjects(this.filteredCharacters, data.nameSortType);
   };
 }
