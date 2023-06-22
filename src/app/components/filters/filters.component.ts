@@ -12,8 +12,8 @@ export class FiltersComponent {
 
   filterFields: { filterName: string; nameSortType: string; gender: string } = {
     filterName: '',
-    nameSortType: 'ascending',
-    gender: 'male',
+    nameSortType: 'default',
+    gender: '',
   };
 
   @Output() onNameChangedEvent = new EventEmitter<string>();
@@ -90,8 +90,22 @@ export class FiltersComponent {
     this.closeModal();
     this.filterFields = {
       filterName: '',
-      nameSortType: 'ascending',
-      gender: 'male',
+      nameSortType: 'default',
+      gender: '',
     };
+  };
+
+  /**
+   * Resets the filter fields object, emits the filter event and closes the modal
+   * @returns {void}
+   */
+  reset = (): void => {
+    this.filterFields = {
+      filterName: '',
+      nameSortType: 'default',
+      gender: '',
+    };
+    this.onFilterEvent.emit(this.filterFields);
+    this.closeModal();
   };
 }

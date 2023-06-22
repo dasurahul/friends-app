@@ -41,7 +41,8 @@
       (input)="filterChanges($event)"
       value="{{ filterFields.nameSortType }}"
     >
-      <option value="ascending" selected>Ascending</option>
+      <option value="default">Select an order</option>
+      <option value="ascending">Ascending</option>
       <option value="descending">Descending</option>
     </select>
   </div>
@@ -73,18 +74,28 @@
     </div>
   </div>
 
-  <div class="flex justify-end gap-4">
-    <button
-      class="min-w-[100px] bg-slate-800 text-white px-4 py-2 rounded"
-      (click)="filter()"
-    >
-      Filter
-    </button>
-    <button
-      class="min-w-[100px] border border-slate-800 px-4 py-2 rounded"
-      (click)="closeModal()"
-    >
-      Cancel
-    </button>
+  <div class="flex justify-between gap-4">
+    <div class="flex gap-4">
+      <button
+        class="min-w-[100px] bg-slate-800 text-white px-4 py-2 rounded"
+        (click)="filter()"
+      >
+        Filter
+      </button>
+      <button
+        class="min-w-[100px] border border-slate-800 px-4 py-2 rounded"
+        (click)="closeModal()"
+      >
+        Cancel
+      </button>
+    </div>
+    <div>
+      <button
+        class="min-w-[100px] text-red-800 px-4 py-2 border border-red-800 rounded"
+        (click)="reset()"
+      >
+        Reset
+      </button>
+    </div>
   </div>
 </app-modal>
