@@ -21,7 +21,7 @@ export class FiltersComponent {
     gender: string;
   }>();
 
-  showModal = false;
+  showModal: boolean = false;
 
   constructor(private renderer: Renderer2) {}
 
@@ -29,11 +29,11 @@ export class FiltersComponent {
    * Scroll enable and disable functions
    */
 
-  disableScroll = () => {
+  disableScroll = (): void => {
     this.renderer.setStyle(document.body, 'overflow', 'hidden');
   };
 
-  enableScroll = () => {
+  enableScroll = (): void => {
     this.renderer.setStyle(document.body, 'overflow', 'auto');
   };
 
@@ -41,12 +41,12 @@ export class FiltersComponent {
    * Modal open and close functions
    */
 
-  openModal = () => {
+  openModal = (): void => {
     this.showModal = true;
     this.disableScroll();
   };
 
-  closeModal = () => {
+  closeModal = (): void => {
     this.showModal = false;
     this.enableScroll();
   };
