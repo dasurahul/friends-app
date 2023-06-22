@@ -3,9 +3,11 @@ export function sortArrayOfObjects(arr: any[], order: string): void {
     arr.sort((a, b) => (a.name < b.name ? -1 : a.name > b.name ? 1 : 0));
   } else if (order === 'descending') {
     arr.sort((a, b) => (a.name > b.name ? -1 : a.name < b.name ? 1 : 0));
+  } else if (order === 'default') {
+    return;
   } else {
     console.error(
-      "Invalid sorting order. Please specify 'ascending' or 'descending'."
+      "Invalid sorting order. Please specify 'ascending' or 'descending' or 'default'."
     );
   }
 }
