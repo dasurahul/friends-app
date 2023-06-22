@@ -40,7 +40,7 @@ export class AppComponent {
     this.filteredCharacters = this.allCharacters.filter((character) => {
       return (
         character.name.toLowerCase().includes(data.filterName) &&
-        character.gender.toLowerCase() === data.gender
+        (data.gender === '' || character.gender.toLowerCase() === data.gender)
       );
     });
     sortArrayOfObjects(this.filteredCharacters, data.nameSortType);
