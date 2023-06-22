@@ -1,9 +1,11 @@
 import { Component, Output, EventEmitter, Renderer2 } from '@angular/core';
+import { LoggingService } from '../../services/logging.service';
 
 @Component({
   selector: 'app-filters',
   templateUrl: './filters.component.html',
   styleUrls: ['./filters.component.css'],
+  providers: [LoggingService],
 })
 export class FiltersComponent {
   name: string = '';
@@ -23,7 +25,10 @@ export class FiltersComponent {
 
   showModal: boolean = false;
 
-  constructor(private renderer: Renderer2) {}
+  constructor(
+    private renderer: Renderer2,
+    private loggingService: LoggingService
+  ) {}
 
   /**
    * Scroll enable and disable functions
@@ -73,6 +78,7 @@ export class FiltersComponent {
       ...this.filterFields,
       [input.name]: input.value,
     };
+    this.loggingService.log(this.filterFields);
   };
 
   /**
