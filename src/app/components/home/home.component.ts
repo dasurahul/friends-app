@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 
-import { Friend } from 'src/app/models/friend.model';
-
+import { Friend } from '../../models/friend.model';
 import * as data from '../../../assets/data.json';
-
-import { sortArrayOfObjects } from 'src/app/shared/utils/arrayUtils';
+import { sortArrayOfObjects } from '../../shared/utils/arrayUtils';
 
 @Component({
   selector: 'app-home',

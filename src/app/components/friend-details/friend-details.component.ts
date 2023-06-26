@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Friend } from 'src/app/models/friend.model';
+
+import { Friend } from '../../models/friend.model';
 import * as data from '../../../assets/data.json';
 
 @Component({
