@@ -1,3 +1,16 @@
+<!-- breadcrumb-->
+<nav class="mb-8">
+  <ol class="flex">
+    <li>
+      <button (click)="goToHome()">Friends</button>
+    </li>
+    <li>
+      <span class="mx-2 text-neutral-500">/</span>
+    </li>
+    <li class="text-neutral-500">{{ friendName }}</li>
+  </ol>
+</nav>
+
 <div>
   <h3 class="text-2xl uppercase font-light mb-6">{{ friendName }}</h3>
   <img
@@ -8,6 +21,10 @@
   <p class="my-8">{{ friendDetails?.description }}</p>
   <p>
     Favourite Dialogue:
-    <span class="italic">{{ friendDetails?.favourite_dialogue }}</span>
+    <span class="italic"
+      >&OpenCurlyDoubleQuote;{{
+        friendDetails?.favourite_dialogue
+      }}&CloseCurlyDoubleQuote;;</span
+    >
   </p>
 </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Friend } from 'src/app/models/friend.model';
 import * as data from '../../../assets/data.json';
 
@@ -16,12 +16,24 @@ export class FriendDetailsComponent implements OnInit {
     ...this.friendsData.characters,
     ...this.friendsData.extras,
   ];
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
+  /**
+   * Initializes the component and retrieves the friend details based on the route parameter
+   * @returns {void}
+   */
   ngOnInit(): void {
     this.friendName = this.route.snapshot.params['name'];
     this.friendDetails = this.allCharacters.find(
       (character) => character.name === this.friendName
     );
+  }
+
+  /**
+   * Navigates to the home route
+   * @returns {void}
+   */
+  goToHome(): void {
+    this.router.navigate(['']);
   }
 }
