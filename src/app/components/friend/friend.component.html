@@ -1,34 +1,38 @@
-<img
-  src="{{ friend?.image }}"
-  alt="{{ friend?.name }}"
-  class="w-full h-[250px] object-cover"
-/>
-<div class="p-2">
-  <h3 class="uppercase tracking-wide">{{ friend?.name }}</h3>
-  <div>
-    Age: <span class="text-gray-800 text-sm">{{ friend?.age }}</span>
-  </div>
-  <div>
-    Relationship Status:
-    <span class="text-gray-800 text-sm">{{ friend?.relationship_status }}</span>
-  </div>
-  <div>
-    Occupation:
-    <span class="text-gray-800 text-sm">{{ friend?.occupation }}</span>
-  </div>
-  <div class="flex items-center gap-2 flex-wrap">
-    Friends:
-    <div
-      *ngFor="let name of friend?.friends"
-      class="bg-gray-200 p-1 text-xs rounded"
-    >
-      {{ name }}
+<a [routerLink]="'/friends/' + friend?.name">
+  <img
+    src="{{ friend?.image }}"
+    alt="{{ friend?.name }}"
+    class="w-full h-[250px] object-cover"
+  />
+  <div class="p-2">
+    <h3 class="uppercase tracking-wide">{{ friend?.name }}</h3>
+    <div>
+      Age: <span class="text-gray-800 text-sm">{{ friend?.age }}</span>
     </div>
-    <div
-      class="text-gray-800 text-sm p-1"
-      *ngIf="friend?.friends?.length === 0"
-    >
-      No friend :(
+    <div>
+      Relationship Status:
+      <span class="text-gray-800 text-sm">{{
+        friend?.relationship_status
+      }}</span>
+    </div>
+    <div>
+      Occupation:
+      <span class="text-gray-800 text-sm">{{ friend?.occupation }}</span>
+    </div>
+    <div class="flex items-center gap-2 flex-wrap">
+      Friends:
+      <div
+        *ngFor="let name of friend?.friends"
+        class="bg-gray-200 p-1 text-xs rounded"
+      >
+        {{ name }}
+      </div>
+      <div
+        class="text-gray-800 text-sm p-1"
+        *ngIf="friend?.friends?.length === 0"
+      >
+        No friend :(
+      </div>
     </div>
   </div>
-</div>
+</a>

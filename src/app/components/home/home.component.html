@@ -1,0 +1,7 @@
+<main>
+  <app-filters
+    (onNameChangedEvent)="onNameChange($event)"
+    (onFilterEvent)="onFilterData($event)"
+  ></app-filters>
+  <app-friends [friends]="filteredCharacters"></app-friends>
+</main>

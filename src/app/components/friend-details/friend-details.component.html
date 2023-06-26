@@ -1,0 +1,13 @@
+<div>
+  <h3 class="text-2xl uppercase font-light mb-6">{{ friendName }}</h3>
+  <img
+    class="max-w-xs rounded-md"
+    src="{{ friendDetails?.image }}"
+    alt="{{ friendDetails?.name }}"
+  />
+  <p class="my-8">{{ friendDetails?.description }}</p>
+  <p>
+    Favourite Dialogue:
+    <span class="italic">{{ friendDetails?.favourite_dialogue }}</span>
+  </p>
+</div>
