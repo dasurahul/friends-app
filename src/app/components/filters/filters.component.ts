@@ -65,6 +65,7 @@ export class FiltersComponent {
     const input = event.target as HTMLInputElement;
     this.name = input.value;
     this.onNameChangedEvent.emit(input.value);
+    this.filterFields.filterName = input.value; // updating filterFields.filterName when updating the name property
   };
 
   /**
@@ -82,21 +83,17 @@ export class FiltersComponent {
   };
 
   /**
-   * Emits the filter event, closes the modal, and resets the filter fields object
+   * Emits the filter event, closes the modal
    * @returns {void}
    */
   filter = (): void => {
+    this.name = this.filterFields.filterName; // updating the name property when filtering
     this.onFilterEvent.emit(this.filterFields);
     this.closeModal();
-    this.filterFields = {
-      filterName: '',
-      nameSortType: 'default',
-      gender: '',
-    };
   };
 
   /**
-   * Resets the filter fields object, emits the filter event and closes the modal
+   * Resets the filter fields object, name field, emits the filter event and closes the modal
    * @returns {void}
    */
   reset = (): void => {
@@ -105,6 +102,7 @@ export class FiltersComponent {
       nameSortType: 'default',
       gender: '',
     };
+    this.name = '';
     this.onFilterEvent.emit(this.filterFields);
     this.closeModal();
   };

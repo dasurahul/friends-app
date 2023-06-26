@@ -18,6 +18,31 @@
   </button>
 </div>
 
+<!-- Applied Filters -->
+<div
+  *ngIf="filterFields.gender || filterFields.nameSortType !== 'default'"
+  class="flex items-center gap-2 mb-4"
+>
+  Applied Filters:
+  <div class="flex gap-2">
+    <div
+      *ngIf="
+        filterFields.nameSortType === 'ascending' ||
+        filterFields.nameSortType === 'descending'
+      "
+      class="bg-gray-200 p-1 rounded-md"
+    >
+      {{ filterFields.nameSortType }}
+    </div>
+    <div
+      *ngIf="filterFields.gender === 'male' || filterFields.gender === 'female'"
+      class="bg-gray-200 p-1 rounded-md"
+    >
+      {{ filterFields.gender }}
+    </div>
+  </div>
+</div>
+
 <!-- Filter Modal -->
 <app-modal *ngIf="showModal">
   <h2 class="text-2xl mb-8">Filter</h2>
@@ -55,7 +80,7 @@
           type="radio"
           name="gender"
           value="male"
-          name="gender"
+          (input)="filterChanges($event)"
           [checked]="filterFields.gender === 'male'"
         />
         <span class="ml-2">Male</span>
@@ -65,7 +90,6 @@
           type="radio"
           name="gender"
           value="female"
-          name="gender"
           (input)="filterChanges($event)"
           [checked]="filterFields.gender === 'female'"
         />
