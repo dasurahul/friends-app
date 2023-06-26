@@ -6,4 +6,6 @@ export type Friend = {
   friends: string[];
   image: string;
   gender: string;
+  description: string;
+  favourite_dialogue: string;
 };
