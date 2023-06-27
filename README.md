@@ -1,19 +1,38 @@
 # Friends App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
+Friends App is a web application that allows users to search for a character in the friends series and see details about the character. User can search with name, and sort names, and filter them by gender to find the characters.
 
-## Development server
+## Table of contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Overview](#overview)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Useful resources](#useful-resources)
 
-## Code scaffolding
+## Overview
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Screenshot
 
-## Build
+![](./screenshot.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Links
 
-## Further help
+- Live Site URL: [https://friends-app-rahul.vercel.app/](https://friends-app-rahul.vercel.app/)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## My process
+
+### Built with
+
+- Angular - JavaScript Framework
+- Tailwind CSS - For styles
+
+### What I learned
+
+- Routing in Angular
+
+### Useful resources
+
+- [Tailwind CSS](https://tailwindcss.com/)
