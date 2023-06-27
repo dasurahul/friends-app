@@ -29,12 +29,4 @@ export class FriendDetailsComponent implements OnInit {
       (character) => character.name === this.friendName
     );
   }
-
-  /**
-   * Navigates to the home route
-   * @returns {void}
-   */
-  goToHome(): void {
-    this.router.navigate(['']);
-  }
 }
