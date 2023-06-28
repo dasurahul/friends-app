@@ -12,14 +12,22 @@
 </nav>
 
 <div>
-  <h3 class="text-2xl uppercase font-light mb-6">{{ friendName }}</h3>
+  <h3
+    *ngIf="friendDetails?.name; else skeleton"
+    class="text-2xl uppercase font-light mb-6"
+  >
+    {{ friendDetails?.name }}
+  </h3>
   <img
-    class="max-w-xs rounded-md"
+    *ngIf="friendDetails?.image; else imageskeleton"
+    class="max-h-[200px] rounded-md"
     src="{{ friendDetails?.image }}"
     alt="{{ friendDetails?.name }}"
   />
-  <p class="my-8">{{ friendDetails?.description }}</p>
-  <p>
+  <p *ngIf="friendDetails?.description; else skeleton" class="my-8">
+    {{ friendDetails?.description }}
+  </p>
+  <p *ngIf="friendDetails?.favourite_dialogue; else skeleton">
     Favourite Dialogue:
     <span class="italic"
       >&OpenCurlyDoubleQuote;{{
@@ -28,3 +36,11 @@
     >
   </p>
 </div>
+
+<ng-template #skeleton>
+  <ngx-skeleton-loader></ngx-skeleton-loader>
+</ng-template>
+
+<ng-template #imageskeleton>
+  <ngx-skeleton-loader [theme]="{ height: '200px' }"></ngx-skeleton-loader>
+</ng-template>

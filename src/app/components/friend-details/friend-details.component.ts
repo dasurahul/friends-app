@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
+import { HttpService } from '../../services/http.service';
 import { Friend } from '../../models/friend.model';
-import * as data from '../../../assets/data.json';
 
 @Component({
   selector: 'app-friend-details',
@@ -10,23 +10,34 @@ import * as data from '../../../assets/data.json';
   styleUrls: ['./friend-details.component.css'],
 })
 export class FriendDetailsComponent implements OnInit {
+  loading: boolean = false;
   friendName: string = '';
   friendDetails?: Friend;
-  friendsData: { characters: Friend[]; extras: Friend[] } = data;
-  allCharacters: Friend[] = [
-    ...this.friendsData.characters,
-    ...this.friendsData.extras,
-  ];
-  constructor(private route: ActivatedRoute, private router: Router) {}
+
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private httpService: HttpService
+  ) {}
 
   /**
    * Initializes the component and retrieves the friend details based on the route parameter
    * @returns {void}
    */
   ngOnInit(): void {
+    this.loading = true;
     this.friendName = this.route.snapshot.params['name'];
-    this.friendDetails = this.allCharacters.find(
-      (character) => character.name === this.friendName
-    );
+    this.httpService
+      .get('https://friends-app-backend.vercel.app/friends/' + this.friendName)
+      .subscribe(
+        (response) => {
+          // console.log(response?.data);
+          this.friendDetails = response?.data;
+          this.loading = false;
+        },
+        (error) => {
+          this.router.navigate(['/page-not-found']);
+        }
+      );
   }
 }
