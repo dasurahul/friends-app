@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { HttpService } from '../../services/http.service';
 import { Friend } from '../../models/friend.model';
@@ -14,7 +15,7 @@ export class HomeComponent implements OnInit {
   allCharacters: Friend[] = [];
   filteredCharacters: Friend[] = [];
 
-  constructor(private httpService: HttpService) {}
+  constructor(private httpService: HttpService, private router: Router) {}
 
   /**
    * Initializes the component and fetches the friend list by making a GET request
@@ -24,12 +25,17 @@ export class HomeComponent implements OnInit {
     this.loading = true;
     this.httpService
       .get('https://friends-app-backend.vercel.app/friends')
-      .subscribe((response) => {
-        // console.table(response?.data);
-        this.allCharacters = response?.data;
-        this.filteredCharacters = response?.data;
-        this.loading = false;
-      });
+      .subscribe(
+        (response) => {
+          // console.table(response?.data);
+          this.allCharacters = response?.data;
+          this.filteredCharacters = response?.data;
+          this.loading = false;
+        },
+        (error) => {
+          this.router.navigate(['/error']);
+        }
+      );
   }
 
   /**

@@ -15,10 +15,12 @@ import { ModalComponent } from './components/modal/modal.component';
 import { HomeComponent } from './components/home/home.component';
 import { FriendDetailsComponent } from './components/friend-details/friend-details.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { ErrorComponent } from './components/error/error.component';
 
 const appRoutes = [
   { path: '', component: HomeComponent },
   { path: 'friends/:name', component: FriendDetailsComponent },
+  { path: 'error', component: ErrorComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
 @NgModule({
@@ -33,6 +35,7 @@ const appRoutes = [
     HomeComponent,
     FriendDetailsComponent,
     PageNotFoundComponent,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,
