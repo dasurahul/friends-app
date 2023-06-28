@@ -3,5 +3,13 @@
     (onNameChangedEvent)="onNameChange($event)"
     (onFilterEvent)="onFilterData($event)"
   ></app-filters>
-  <app-friends [friends]="filteredCharacters"></app-friends>
+  <app-friends
+    *ngIf="!loading; else skeleton"
+    [friends]="filteredCharacters"
+  ></app-friends>
 </main>
+
+<ng-template #skeleton>
+  <ngx-skeleton-loader [theme]="{ height: '250px' }"></ngx-skeleton-loader>
+  <ngx-skeleton-loader [theme]="{ height: '250px' }"></ngx-skeleton-loader>
+</ng-template>

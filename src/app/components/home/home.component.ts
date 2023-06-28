@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
+import { HttpService } from '../../services/http.service';
 import { Friend } from '../../models/friend.model';
-import * as data from '../../../assets/data.json';
 import { sortArrayOfObjects } from '../../shared/utils/arrayUtils';
 
 @Component({
@@ -9,12 +9,28 @@ import { sortArrayOfObjects } from '../../shared/utils/arrayUtils';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
-export class HomeComponent {
-  friendsData: { characters: Friend[]; extras: Friend[] } = data;
-  friends: Friend[] = this.friendsData.characters;
-  extras: Friend[] = this.friendsData.extras;
-  allCharacters: Friend[] = [...this.friends, ...this.extras];
-  filteredCharacters: Friend[] = this.allCharacters;
+export class HomeComponent implements OnInit {
+  loading: boolean = false;
+  allCharacters: Friend[] = [];
+  filteredCharacters: Friend[] = [];
+
+  constructor(private httpService: HttpService) {}
+
+  /**
+   * Initializes the component and fetches the friend list by making a GET request
+   * @returns {void}
+   */
+  ngOnInit(): void {
+    this.loading = true;
+    this.httpService
+      .get('https://friends-app-backend.vercel.app/friends')
+      .subscribe((response) => {
+        // console.table(response?.data);
+        this.allCharacters = response?.data;
+        this.filteredCharacters = response?.data;
+        this.loading = false;
+      });
+  }
 
   /**
    * Filters the characters based on the value received from the input field
