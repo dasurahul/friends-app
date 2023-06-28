@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -31,7 +34,13 @@ const appRoutes = [
     FriendDetailsComponent,
     PageNotFoundComponent,
   ],
-  imports: [BrowserModule, RouterModule.forRoot(appRoutes)],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule,
+    NoopAnimationsModule,
+    NgxSkeletonLoaderModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
