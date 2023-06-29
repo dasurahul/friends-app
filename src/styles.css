@@ -3,14 +3,9 @@
 @tailwind utilities;
 
 body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
   background-color: #fafafa;
-}
-
-.friends-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  align-items: start;
-  gap: 1rem;
 }
 
 html,
@@ -18,7 +13,9 @@ body {
   height: 100%;
 }
 
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+.friends-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: start;
+  gap: 1rem;
 }
