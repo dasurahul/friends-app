@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.loading = true;
     this.httpService
-      .get('https://friends-app-backend.vercel.app/friends')
+      .get('https://friends-app-backend.onrender.com/friends')
       .subscribe(
         (response) => {
           // console.table(response?.data);

@@ -28,7 +28,7 @@ export class FriendDetailsComponent implements OnInit {
     this.loading = true;
     this.friendName = this.route.snapshot.params['name'];
     this.httpService
-      .get('https://friends-app-backend.vercel.app/friends/' + this.friendName)
+      .get('https://friends-app-backend.onrender.com/friends/' + this.friendName)
       .subscribe(
         (response) => {
           // console.log(response?.data);
