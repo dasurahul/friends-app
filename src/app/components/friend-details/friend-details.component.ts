@@ -4,6 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { HttpService } from '../../services/http.service';
 import { Friend } from '../../models/friend.model';
 
+import { environment } from '../../../environment/environment';
+
 @Component({
   selector: 'app-friend-details',
   templateUrl: './friend-details.component.html',
@@ -28,7 +30,7 @@ export class FriendDetailsComponent implements OnInit {
     this.loading = true;
     this.friendName = this.route.snapshot.params['name'];
     this.httpService
-      .get('https://friends-app-backend.onrender.com/friends/' + this.friendName)
+      .get(environment.backendURL + '/friends/' + this.friendName)
       .subscribe(
         (response) => {
           // console.log(response?.data);

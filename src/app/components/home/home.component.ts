@@ -5,6 +5,8 @@ import { HttpService } from '../../services/http.service';
 import { Friend } from '../../models/friend.model';
 import { sortArrayOfObjects } from '../../shared/utils/arrayUtils';
 
+import { environment } from '../../../environment/environment';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -23,19 +25,17 @@ export class HomeComponent implements OnInit {
    */
   ngOnInit(): void {
     this.loading = true;
-    this.httpService
-      .get('https://friends-app-backend.onrender.com/friends')
-      .subscribe(
-        (response) => {
-          // console.table(response?.data);
-          this.allCharacters = response?.data;
-          this.filteredCharacters = response?.data;
-          this.loading = false;
-        },
-        (error) => {
-          this.router.navigate(['/error']);
-        }
-      );
+    this.httpService.get(environment.backendURL + '/friends').subscribe(
+      (response) => {
+        // console.table(response?.data);
+        this.allCharacters = response?.data;
+        this.filteredCharacters = response?.data;
+        this.loading = false;
+      },
+      (error) => {
+        this.router.navigate(['/error']);
+      }
+    );
   }
 
   /**
